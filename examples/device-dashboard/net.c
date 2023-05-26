@@ -137,6 +137,7 @@ static void mqtt_fn(struct mg_connection *c, int ev, void *ev_data, void *fnd) {
     sub_opts.topic = mg_str(s_config.sub);
     sub_opts.qos = 2;
 
+
     mg_mqtt_sub(s_mqtt, &sub_opts);
     send_notification(c->mgr, "{%m:%m,%m:null}", MG_ESC("name"),
                       MG_ESC("config"), MG_ESC("data"));
